@@ -1,10 +1,9 @@
 name: Post JSON File to Two URLs
 
 on:
-  push:
-    branches:
-    - main # Runs only when pushing to the main branch
-  workflow_dispatch: # Allows manual trigger
+  schedule:
+    - cron: '0 * * * *'  # Elke uur tussen 08:00–01:00 Nederlandse zomertijd (UTC+2)
+  workflow_dispatch:         # Voor handmatige trigger via GitHub UI
     
 jobs:
   post_json:
